@@ -1,0 +1,76 @@
+<!-- Describe task in general -->
+
+<p>
+    You should find out if the given unix pattern matches given filename.
+</p>
+
+<p> Let me show you a couple small examples of matching filenames in unix-shell. For example * matches everything and *.txt matches all files that has txt extension. Here is a small table that shows symbols that can be used in patterns</p>
+
+<table>
+    <tr>
+        <td>*</td>
+        <td>matches everything</td>
+    </tr>
+    <tr>
+        <td>?</td>
+        <td>matches any single character</td>
+    </tr>
+    <tr>
+        <td>[seq]</td>
+        <td>matches any character in seq</td>
+    </tr>
+    <tr>
+        <td>[!seq]</td>
+        <td>matches any character not in seq</td>
+    </tr>
+</table>
+
+<!-- Explain input and output values -->
+<p>
+    <strong>Input: </strong> Two arguments. Both are strings
+</p>
+
+<p>
+    <strong>Output: </strong> Bool.
+</p>
+
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+
+{% if interpreter.slug == "js-node" %}
+<pre class="brush: javascript">unixMatch('somefile.txt', '*') == true
+unixMatch('other.exe', '*') == true
+unixMatch('my.exe', '*.txt') == false
+unixMatch('log1.txt', 'log?.txt') == true
+unixMatch('log1.txt', 'log[1234567890].txt') == true
+unixMatch('log12.txt', 'log?.txt') == false
+unixMatch('log12.txt', 'log??.txt') == true
+</pre>
+{% else %}
+<pre class="brush: python">unix_match('somefile.txt', '*') == True
+unix_match('other.exe', '*') == True
+unix_match('my.exe', '*.txt') == False
+unix_match('log1.txt', 'log?.txt') == True
+unix_match('log1.txt', 'log[1234567890].txt') == True
+unix_match('log12.txt', 'log?.txt') == False
+unix_match('log12.txt', 'log??.txt') == True
+</pre>
+{% endif %}
+</div>
+<!-- Here you can explain how it can be used in development and what is usage of this. -->
+<!-- The section is optional -->
+<p class="for_info_only">
+    <strong>How it is used: </strong>
+    <i>in unix-shell</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<!--p>
+    <strong>Precondition:</strong>
+    <i>both given ints should be between -1000 and 1000</i>
+</p -->

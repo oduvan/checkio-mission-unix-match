@@ -1,0 +1,21 @@
+"use strict";
+
+function unixMatch(filename, pattern) {
+    return filename == pattern;
+}
+
+var assert = require('assert');
+if (!global.is_checking) {
+    console.log('Example:')
+    console.log(unixMatch('somefile.txt', '*'))
+
+    // These "asserts" are used for self-checking and not for an auto-testing
+    assert.equal(unixMatch('somefile.txt', '*'), true)
+    assert.equal(unixMatch('other.exe', '*'), true)
+    assert.equal(unixMatch('my.exe', '*.txt'), false)
+    assert.equal(unixMatch('log1.txt', 'log?.txt'), true)
+    assert.equal(unixMatch('log1.txt', 'log[1234567890].txt'), true)
+    assert.equal(unixMatch('log12.txt', 'log?.txt'), false)
+    assert.equal(unixMatch('log12.txt', 'log??.txt'), true)
+    console.log("Coding complete? Click 'Check' to earn cool rewards!");
+}
