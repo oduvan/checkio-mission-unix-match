@@ -165,6 +165,21 @@ TESTS = {
         {
             "input": ['name.exe', 'name.[!.][!.][!.]'],
             "answer": True
+        },
+        {
+            "input": ['[!]check.txt', '[!]check.txt'],
+            "answer": True,
+            "explanation": "[!] is not class"
+        },
+        {
+            "input": ['check.txt', '[[c]heck.txt'],
+            "answer": True,
+            "explanation": "unmatched brackets"
+        },
+        {
+            "input": ['[?*]', '[[][?][*][]]'],
+            "answer": True,
+            "explanation": "escaping metacharacters"
         }
 
     ]
