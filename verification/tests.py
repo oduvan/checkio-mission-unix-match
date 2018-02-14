@@ -160,7 +160,7 @@ TESTS = {
         },
         {
             "input": ['name....', 'name.[!.][!.][!.]'],
-            "answer": True
+            "answer": False
         },
         {
             "input": ['name.exe', 'name.[!.][!.][!.]'],
