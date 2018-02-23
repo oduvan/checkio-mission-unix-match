@@ -180,7 +180,19 @@ TESTS = {
             "input": ['[?*]', '[[][?][*][]]'],
             "answer": True,
             "explanation": "escaping metacharacters"
-        }
+        },
+        {
+            "input": ['Feb 2018', '[A-Z][a-z][a-zA-Z] [2-3][0-4][1-1][5-9]'],
+            "answer": True
+        },
+        {
+            "input": ['[check].txt', '[][]check[][].txt'],
+            "answer": True
+        },
+        {
+            "input": ["checkio", "[c[]heckio"],
+            "answer": True
+        },
 
     ]
 }
